@@ -17,7 +17,7 @@
                 $Name = $row["name"];
                 $Time = $row["time"];
                 $Content = $row["content"];
-                //$html = $html. "<tr><td>" . $row["name"] . "</td><td>" . "<img src='product img/" . $row["img"] . "' width = 300px class='rounded mx-auto d-block'>" . "</td><td>" . '<h4 class="taka">৳</h4>'. $row["price"] . "</td><td>". $row["stock"] . "</td><td>". $row["description"] . "</td><td>". '<a class="btn btn-lg btn-block btn btn-outline-info" href="mycart.php?id=' . $row["id"] .'"><i class="fa-solid fa-bag-shopping"></i> Add To Cart</a>' ."</td></tr>";
+                //$html = $html. "<tr><td>" . $row["name"] . "</td><td>" . "<img src='". $row["img"] . "' width = 300px class='rounded mx-auto d-block'>" . "</td><td>" . '<h4 class="taka">৳</h4>'. $row["price"] . "</td><td>". $row["stock"] . "</td><td>". $row["description"] . "</td><td>". '<a class="btn btn-lg btn-block btn btn-outline-info" href="mycart.php?id=' . $row["id"] .'"><i class="fa-solid fa-bag-shopping"></i> Add To Cart</a>' ."</td></tr>";
                
             }
           

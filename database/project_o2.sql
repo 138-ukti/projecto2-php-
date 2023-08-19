@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2022 at 02:47 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.25
+-- Generation Time: Aug 19, 2023 at 08:38 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `blog` (
   `b_title` varchar(100) NOT NULL,
   `content` varchar(2000) NOT NULL,
   `time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `blog`
@@ -57,7 +57,7 @@ CREATE TABLE `cart` (
   `price` int(10) NOT NULL,
   `email` varchar(30) NOT NULL,
   `quantity` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -72,7 +72,7 @@ CREATE TABLE `consult` (
   `specialized` varchar(100) NOT NULL,
   `whtsapp_no` varchar(20) NOT NULL,
   `email` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `consult`
@@ -93,14 +93,7 @@ CREATE TABLE `donation` (
   `total` int(11) NOT NULL,
   `given` int(11) NOT NULL,
   `deu` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `donation`
---
-
-INSERT INTO `donation` (`id`, `total`, `given`, `deu`) VALUES
-(1, 1600, 4941, -3341);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -115,17 +108,14 @@ CREATE TABLE `event` (
   `e_time` datetime NOT NULL,
   `location` varchar(50) NOT NULL,
   `img` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `event`
 --
 
 INSERT INTO `event` (`id`, `name`, `details`, `e_time`, `location`, `img`) VALUES
-(1, 'SHARIA PARVIN', 'Hello all', '2022-09-08 13:25:00', 'Dhaka', '2.jpg'),
-(2, 'vjhj', 'nchgdhfv', '2022-09-22 14:08:00', 'hggj', ''),
-(3, 'SHARIA PARVIN', 'xfdfg', '2022-09-24 15:36:00', 'hggj', ''),
-(4, 'Coxs bazar', 'my', '2022-09-12 15:39:00', 'dhaka', '');
+(7, 'Sun Flower', 'klsjdlfks', '2023-08-16 11:21:00', 'dhaka', 'upload_event/01.jpg');
 
 -- --------------------------------------------------------
 
@@ -139,14 +129,7 @@ CREATE TABLE `feedback` (
   `email` varchar(30) NOT NULL,
   `feedback` varchar(500) NOT NULL,
   `upload_time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `feedback`
---
-
-INSERT INTO `feedback` (`name`, `id`, `email`, `feedback`, `upload_time`) VALUES
-('Mosnur Ahmed', 3, 'm@gmail.com', 'vv', '2022-08-31 14:28:06');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -163,7 +146,7 @@ CREATE TABLE `order` (
   `total_cost` float NOT NULL,
   `d_status` varchar(200) NOT NULL,
   `id` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `order`
@@ -184,18 +167,18 @@ INSERT INTO `order` (`cus_name`, `cus_email`, `cus_pn`, `cus_add`, `pro_name`, `
 CREATE TABLE `package` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
-  `img` longblob NOT NULL,
+  `img` varchar(1000) NOT NULL,
   `price` double NOT NULL,
   `description` varchar(500) NOT NULL,
   `stock` varchar(20) NOT NULL DEFAULT 'Available'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `package`
 --
 
 INSERT INTO `package` (`id`, `name`, `img`, `price`, `description`, `stock`) VALUES
-(2, 'SHARIA PARVIN', '', 30, 'xdfdfd ', 'Available');
+(5, 'Sun Flower', 'package-uploads/login1.png', 1000, 'kldfjskdskjlf', 'Available');
 
 -- --------------------------------------------------------
 
@@ -206,24 +189,19 @@ INSERT INTO `package` (`id`, `name`, `img`, `price`, `description`, `stock`) VAL
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `img` longblob NOT NULL,
+  `img` varchar(1000) NOT NULL,
   `price` float NOT NULL,
   `type` varchar(20) NOT NULL,
   `stock` varchar(20) NOT NULL DEFAULT 'Available',
   `details` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `img`, `price`, `type`, `stock`, `details`) VALUES
-(1, 'E - Shopier', 0x41737472615f69636f6e2e77656270, 1000, 'Flower Plants', 'Available', 'nothing to say  '),
-(2, 'Sun Flower', 0x666164655f76616c6f72616e745f69636f6e5f323239342e77656270, 5000, 'Flower Plants', 'Available', 'I need it desperately. '),
-(3, 'Five Star', 0x72657374617572616e742e6a7067, 4500, 'Flower Plants', 'Available', 'ghvvhvh'),
-(4, 'Coxs bazar', 0x53637265656e73686f742028323136292e706e67, 20, 'Fruit Plants', 'Available', 'dcfd'),
-(5, 'SHARIA PARVIN', 0x646f776e6c6f61642e6a7067, 88, 'Vegetable Seeds', 'Available', 'm,jkjk'),
-(6, 'sunflower', 0x646f776e6c6f61642e6a7067, 452, 'Flower Plants', 'Available', 'sunflower');
+(8, 'Sun Flower', 'uploads/01.jpg', 10, 'Flower Plants', 'Available', 'jjk');
 
 -- --------------------------------------------------------
 
@@ -237,7 +215,7 @@ CREATE TABLE `recycle` (
   `address` varchar(100) NOT NULL,
   `description` varchar(200) NOT NULL,
   `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -252,7 +230,7 @@ CREATE TABLE `r_product` (
   `p_name` varchar(30) NOT NULL,
   `description` varchar(500) NOT NULL,
   `time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `r_product`
@@ -277,7 +255,7 @@ CREATE TABLE `user` (
   `role` varchar(10) NOT NULL,
   `premium` varchar(20) NOT NULL,
   `gender` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -286,7 +264,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `email`, `name`, `address`, `p_number`, `password`, `role`, `premium`, `gender`) VALUES
 (1, 'wdrishad@gmail.com', 'Rishad', 'Baridhara', '1705978622', '1234', 'admin', 'no', 'male'),
 (2, 'm@gmail.com', 'Mosnur Ahmed', 'UIU', '01980793945', '123456', 'user', 'premium', 'Male'),
-(3, 'sharia@gmail.com', 'Sharia Parvin', 'dhaka', '01705555656', '12345', 'admin', 'not premium', 'Female');
+(4, 'farzana@gmail.com', 'farzana', 'dhaka', '0124967566', '1234', 'user', 'not premium', 'Female');
 
 --
 -- Indexes for dumped tables
@@ -397,7 +375,7 @@ ALTER TABLE `donation`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -415,13 +393,13 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `package`
 --
 ALTER TABLE `package`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `recycle`
@@ -439,7 +417,7 @@ ALTER TABLE `r_product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

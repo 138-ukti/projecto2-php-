@@ -123,7 +123,6 @@
         }
               
 ?>
-<h3 class="cta2-heading">TOTAL DONATION <em class="yel">৳<?php echo $oneper; ?><br>FROM OUR <em class="red">1%</em> OF SELLING PRICE</h3>
 
 </section>
 
@@ -299,17 +298,7 @@
     <p>Find our other services below</p>
 
     <div class="row">
-    <div class="p-col col-lg-3 col-md-6 col-sm-12">
-        <div class="card" style="width: 18rem;">
-        <div class="inner">
-        <img src="img/pic/16.jpg" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-            <p class="card-text">Click below to order our merch<br>T-Shirts</p>
-        </div>
-        <button onclick="window.location.href='Merch.php'" type="button" class="CA btn btn-lg btn-block btn btn-outline-success">Our Merch</button>
-        </div>
-    </div>
+   
 
     <div class="p-col col-lg-3 col-md-6 col-sm-12">
         <div class="card" style="width: 18rem;">
@@ -450,7 +439,7 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
-s1.src='https://embed.tawk.to/624097732abe5b455fc1dc43/1fv64v7g0';
+s1.src='https://embed.tawk.to/625db0e37b967b11798b4aa2/1g0uvlurr';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);

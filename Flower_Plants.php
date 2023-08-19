@@ -18,7 +18,7 @@ include '_dbconnect.php';
     
     if(mysqli_num_rows($run)>0){
         while($row = $run->fetch_assoc()){
-            $html = $html. "<tr><td>" . $row["name"] . "</td><td>" . "<img src='product img/" . $row["img"] . "' width = 300px class='rounded mx-auto d-block'>" . "</td><td>" . '<h4 class="taka">৳</h4>'. $row["price"] . "</td><td>". $row["stock"] . "</td><td>". $row["details"] . "</td><td>". '<a class="btn btn-lg btn-block btn btn-outline-info" href="mycart.php?id=' . $row["id"] .'"><i class="fa-solid fa-bag-shopping"></i> Add To Cart</a>' ."</td></tr>";
+            $html = $html. "<tr><td>" . $row["name"] . "</td><td>" . "<img src='". $row["img"] . "' width = 300px class='rounded mx-auto d-block'>" . "</td><td>" . '<h4 class="taka">৳</h4>'. $row["price"] . "</td><td>". $row["stock"] . "</td><td>". $row["details"] . "</td><td>". '<a class="btn btn-lg btn-block btn btn-outline-info" href="mycart.php?id=' . $row["id"] .'"><i class="fa-solid fa-bag-shopping"></i> Add To Cart</a>' ."</td></tr>";
            
         }
     }  
@@ -30,7 +30,7 @@ else{
         $html = "";
         if(mysqli_num_rows($run)>0){
             while($row = $run->fetch_assoc()){
-                $html = $html. "<tr><td>" . $row["name"] . "</td><td>" . "<img src='product img/" . $row["img"] . "' width = 300px class='rounded mx-auto d-block'>" . "</td><td>" . '<h4 class="taka">৳</h4>'. $row["price"] . "</td><td>". $row["stock"] . "</td><td>". $row["details"] . "</td><td>". '<a class="btn btn-lg btn-block btn btn-outline-info" href="mycart.php?id=' . $row["id"] .'"><i class="fa-solid fa-bag-shopping"></i> Add To Cart</a>' ."</td></tr>";
+                $html = $html. "<tr><td>" . $row["name"] . "</td><td>" . "<img src='". $row["img"] . "' width = 300px class='rounded mx-auto d-block'>" . "</td><td>" . '<h4 class="taka">৳</h4>'. $row["price"] . "</td><td>". $row["stock"] . "</td><td>". $row["details"] . "</td><td>". '<a class="btn btn-lg btn-block btn btn-outline-info" href="mycart.php?id=' . $row["id"] .'"><i class="fa-solid fa-bag-shopping"></i> Add To Cart</a>' ."</td></tr>";
                
             }
           

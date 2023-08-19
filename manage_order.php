@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       while($row = $run->fetch_assoc()){
 
 
-        $html = $html. "<tr><td>" . $row["name"] . "</td><td>" . "<img src='product img/" . $row["img"] . "' width = 300px class='rounded mx-auto d-block'>" . "</td><td>" . '<h4 class="taka">৳</h4>'. $row["price"] . "</td><td>" . $row["description"] . "</td><td>". $row["stock"] . "</td>
+        $html = $html. "<tr><td>" . $row["name"] . "</td><td>" . "<img src='". $row["img"] . "' width = 300px class='rounded mx-auto d-block'>" . "</td><td>" . '<h4 class="taka">৳</h4>'. $row["price"] . "</td><td>" . $row["description"] . "</td><td>". $row["stock"] . "</td>
 		<td>".'<a  href="update_package.php?id= '.$row['id'].'" class="btn btn-lg btn-block btn btn-outline-info">Update</a>'. '<button type="submit" id="' . $row["id"] .'" class="del btn btn-outline-danger">Delete</button>' ."</td></tr>";
                
 
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>View Package List</title>
+    <title>Manage Order</title>
     <link rel = "icon" href="img/fav.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css">
@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     <div id="cta">
-    <h1 class = "cta-heading"><i class="fa-solid fa-list-check"></i> View Package List</h1>
+    <h1 class = "cta-heading"><i class="fa-solid fa-list-check"></i> Manage Order</h1>
     </div>
     
     <form class="form" action="package_list.php" method="POST">
