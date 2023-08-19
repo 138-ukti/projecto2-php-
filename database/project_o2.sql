@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2023 at 08:38 AM
+-- Generation Time: Aug 19, 2023 at 08:39 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -81,19 +81,6 @@ CREATE TABLE `consult` (
 INSERT INTO `consult` (`id`, `name`, `designation`, `specialized`, `whtsapp_no`, `email`) VALUES
 (1, 'SHARIA PARVIN', 'vhghjgjjk', 'hjvhjhjjhhj', '2565656', 'wdrishad@gmail.com'),
 (2, 'Five Star', 'sfdds', 'dsafdas', '.20202', 'm@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `donation`
---
-
-CREATE TABLE `donation` (
-  `id` int(11) NOT NULL,
-  `total` int(11) NOT NULL,
-  `given` int(11) NOT NULL,
-  `deu` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -289,12 +276,6 @@ ALTER TABLE `consult`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `donation`
---
-ALTER TABLE `donation`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `event`
 --
 ALTER TABLE `event`
@@ -364,12 +345,6 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `consult`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `donation`
---
-ALTER TABLE `donation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `event`
