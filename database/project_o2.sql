@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2023 at 08:39 AM
+-- Generation Time: Aug 26, 2023 at 08:03 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -85,6 +85,26 @@ INSERT INTO `consult` (`id`, `name`, `designation`, `specialized`, `whtsapp_no`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `donation`
+--
+
+CREATE TABLE `donation` (
+  `id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `given` int(11) NOT NULL,
+  `deu` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `donation`
+--
+
+INSERT INTO `donation` (`id`, `total`, `given`, `deu`) VALUES
+(1, 1600, 5991, -4391);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `event`
 --
 
@@ -102,7 +122,30 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `name`, `details`, `e_time`, `location`, `img`) VALUES
-(7, 'Sun Flower', 'klsjdlfks', '2023-08-16 11:21:00', 'dhaka', 'upload_event/01.jpg');
+(7, 'Sun Flower', 'klsjdlfks', '2023-08-16 11:21:00', 'dhaka', 'upload_event/01.jpg'),
+(9, 'Pinterest Quote', 'Best One', '2023-08-01 11:30:00', 'Dhaka Universtiy', 'upload_event/gitex-du-1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_m`
+--
+
+CREATE TABLE `event_m` (
+  `id` int(11) NOT NULL,
+  `user_name` varchar(100) DEFAULT NULL,
+  `user_email` varchar(100) DEFAULT NULL,
+  `event_name` varchar(1000) DEFAULT NULL,
+  `event_date` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `event_m`
+--
+
+INSERT INTO `event_m` (`id`, `user_name`, `user_email`, `event_name`, `event_date`) VALUES
+(1, 'Mosnur Ahmed', 'm@gmail.com', 'Sun Flower', '2023-08-16 11:21:00'),
+(2, 'Mosnur Ahmed', 'm@gmail.com', 'Sun Flower', '2023-08-16 11:21:00');
 
 -- --------------------------------------------------------
 
@@ -276,9 +319,21 @@ ALTER TABLE `consult`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `donation`
+--
+ALTER TABLE `donation`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `event`
 --
 ALTER TABLE `event`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `event_m`
+--
+ALTER TABLE `event_m`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -347,10 +402,22 @@ ALTER TABLE `consult`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `donation`
+--
+ALTER TABLE `donation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `event_m`
+--
+ALTER TABLE `event_m`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `feedback`
