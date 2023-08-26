@@ -7,8 +7,8 @@ include '_dbconnect.php';
     parse_str($_SERVER['QUERY_STRING'], $queries);
     $id = $queries['id'];
     
-
-    $sql = "select * FROM event WHERE id = $id";
+echo $id;
+    $sql = "select * FROM event WHERE id=$id";
 $result1 = mysqli_query($con, $sql);
 
 $num1 = mysqli_num_rows($result1);
@@ -49,7 +49,7 @@ $sql3 = "INSERT INTO `event_m` (`user_name`, `user_email`, `event_name`, `event_
 $result3 = mysqli_query($con, $sql3);
 
 
-session_start();
+// session_start();
 $_SESSION['going'] = 'Successfully Join this event';
 header("Location: userhome.php #event");
 ?>

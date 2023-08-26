@@ -76,6 +76,7 @@ ini_set('display_errors', 0);
               <textarea class="form-control" name="description" rows="4" cols="50" placeholder="Enter Event Description" required></textarea>
               </div>
 
+
                   
               <div class="form-group">
               <label for="Event Details">Image</label>

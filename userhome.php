@@ -1,6 +1,7 @@
 <?php
   session_start();
   $email = $_SESSION['email'];
+  $first_id = $_SESSION['id'];
   if($email==null){
     header('location:login.php?id=home');
   }
@@ -109,7 +110,7 @@
   </section>
 
   
-<section id="cta2">
+  <section id="cta2">
 <?php
         include '_dbconnect.php';
         
@@ -123,6 +124,7 @@
         }
               
 ?>
+<h3 class="cta2-heading">TOTAL DONATION <em class="yel">৳<?php echo $oneper; ?><br>FROM OUR <em class="red">1%</em> OF SELLING PRICE</h3>
 
 </section>
 
@@ -137,12 +139,12 @@
   
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="event img/2.jpg" alt="First slide">
+      <img class="d-block w-100" style="height:600px" src="event img/2.jpg" alt="First slide">
       
       <div class="carousel-caption d-none d-md-block">
         <h5><?php echo $first_name; ?></h5>
         <p><i class="fa-solid fa-calendar"></i> <?php echo date('h:i:s a, m/d/Y', strtotime($first_time));?> &nbsp <i class="fa-solid fa-location-dot"></i> <?php echo $first_loc; ?><br><br><?php echo $first_det; ?></p>
-        <a  href="joining_event.php?id=<?php echo $first_id?>" class="btn btn-lg btn-block btn btn-outline-light"> Going</a>
+        <a  href="joining_event.php?id=7" class="btn btn-lg btn-block btn btn-outline-light"> Going</a>
       </div>
     </div>
     <?php
@@ -152,7 +154,7 @@
       
     ?>
     <div class="carousel-item">
-      <img class="d-block w-100" src="event img/<?php echo $row['img'];?>" alt="Second slide">
+      <img class="d-block w-100" style="height: 600px;" src="<?php echo $row['img'];?>" alt="Second slide">
       <div class="carousel-caption d-none d-md-block">
         <h5><?php echo $row['name'];?></h5>
         <p><i class="fa-solid fa-calendar"></i> <?php echo date('h:i:s a, m/d/Y', strtotime($row['e_time']));?> &nbsp <i class="fa-solid fa-location-dot"></i> <?php echo $row['location'];?><br><br><?php echo $row['details'];?></p>
